@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class FileProcessor {
     private File directory;
 
@@ -6,10 +8,8 @@ public class FileProcessor {
     }
 
     public void processFiles() {
-        File[] files = directory.listFiles((dir, name) -> name.endsWith(".op"));
-        for (File file : files) {
-            processFile(file);
-        }
+        Arrays.stream(directory.listFiles((dir, name) -> name.endsWith(".op")))
+              .forEach(this::processFile);
     }
 
     private void processFile(File file) {
@@ -17,28 +17,36 @@ public class FileProcessor {
         try (BufferedReader reader = new BufferedReader(new FileReader(file));
              BufferedWriter writer = new BufferedWriter(new FileWriter(resultFile))) {
 
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] parts = line.split(";");
-                if (parts.length != 3) {
-                    writer.write("ERROR");
-                    writer.newLine();
-                    continue;
-                }
-
-                try {
-                    double op1 = Double.parseDouble(parts[0]);
-                    double op2 = Double.parseDouble(parts[1]);
-                    OperationStrategy strategy = OperationFactory.getOperationStrategy(parts[2]);
-                    double result = strategy.execute(op1, op2);
-                    writer.write(String.valueOf(result));
-                } catch (Exception e) {
-                    writer.write("ERROR");
-                }
-                writer.newLine();
-            }
+            reader.lines().forEach(line -> processLine(line, writer));
         } catch (IOException e) {
             System.err.println("Erreur de lecture/écriture : " + e.getMessage());
+        }
+    }
+
+    private void processLine(String line, BufferedWriter writer) {
+        String[] parts = line.split(";");
+        if (parts.length != 3) {
+            writeToFile(writer, "ERROR");
+            return;
+        }
+
+        try {
+            double op1 = Double.parseDouble(parts[0]);
+            double op2 = Double.parseDouble(parts[1]);
+            OperationStrategy strategy = OperationFactory.getOperationStrategy(parts[2]);
+            double result = strategy.execute(op1, op2);
+            writeToFile(writer, String.valueOf(result));
+        } catch (Exception e) {
+            writeToFile(writer, "ERROR");
+        }
+    }
+
+    private void writeToFile(BufferedWriter writer, String content) {
+        try {
+            writer.write(content);
+            writer.newLine();
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to write to file", e);
         }
     }
 }
