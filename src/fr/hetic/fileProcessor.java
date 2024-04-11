@@ -1,4 +1,9 @@
-import java.util.Arrays;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
 
 public class FileProcessor {
     private File directory;
@@ -8,8 +13,10 @@ public class FileProcessor {
     }
 
     public void processFiles() {
-        Arrays.stream(directory.listFiles((dir, name) -> name.endsWith(".op")))
-              .forEach(this::processFile);
+        File[] files = directory.listFiles((dir, name) -> name.endsWith(".op"));
+        for (File file : files) {
+            processFile(file);
+        }
     }
 
     private void processFile(File file) {
@@ -17,7 +24,10 @@ public class FileProcessor {
         try (BufferedReader reader = new BufferedReader(new FileReader(file));
              BufferedWriter writer = new BufferedWriter(new FileWriter(resultFile))) {
 
-            reader.lines().forEach(line -> processLine(line, writer));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                processLine(line, writer);
+            }
         } catch (IOException e) {
             System.err.println("Erreur de lecture/écriture : " + e.getMessage());
         }
