@@ -1,0 +1,7 @@
+AdditionStrategy.class
+SubtractionStrategy.class
+CalculateurFichier.class
+OperationStrategy.class
+MultiplicationStrategy.class
+OperationFactory.class
+FileProcessor.class

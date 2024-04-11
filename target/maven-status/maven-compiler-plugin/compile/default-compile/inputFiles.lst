@@ -1,5 +1,7 @@
-/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/main.java
-/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/interfaceStrategy.java
-/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/operationFactory.java
-/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/operationConcrete.java
-/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/fileProcessor.java
+/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/OperationStrategy.java
+/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/SubtractionStrategy.java
+/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/AdditionStrategy.java
+/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/CalculateurFichier.java
+/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/OperationFactory.java
+/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/FileProcessor.java
+/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/MultiplicationStrategy.java
