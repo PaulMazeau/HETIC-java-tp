@@ -1,3 +1,4 @@
 SubtractionStrategyTest.class
 AdditionStrategyTest.class
 MultiplicationStrategyTest.class
+DatabaseConnectionTest.class

@@ -1,7 +1,11 @@
+Fichier.class
+DatabaseConnection.class
+Ligne.class
 AdditionStrategy.class
 SubtractionStrategy.class
 CalculateurFichier.class
 OperationStrategy.class
 MultiplicationStrategy.class
+DatabaseFileReader.class
 OperationFactory.class
 FileProcessor.class
