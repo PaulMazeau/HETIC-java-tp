@@ -1,11 +1,13 @@
-Fichier.class
-DatabaseConnection.class
 Ligne.class
 AdditionStrategy.class
 SubtractionStrategy.class
 CalculateurFichier.class
-OperationStrategy.class
 MultiplicationStrategy.class
 DatabaseFileReader.class
+fr/hetic/ConfigLoader.class
+fr/hetic/ApplicationMain.class
+Fichier.class
+DatabaseConnection.class
+OperationStrategy.class
 OperationFactory.class
 FileProcessor.class

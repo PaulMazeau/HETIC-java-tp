@@ -1,11 +1,13 @@
 /Users/paul/Desktop/java-tp/src/main/java/fr/hetic/DatabaseFileReader.java
-/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/OperationStrategy.java
+/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/ApplicationMain.java
 /Users/paul/Desktop/java-tp/src/main/java/fr/hetic/SubtractionStrategy.java
 /Users/paul/Desktop/java-tp/src/main/java/fr/hetic/AdditionStrategy.java
 /Users/paul/Desktop/java-tp/src/main/java/fr/hetic/CalculateurFichier.java
+/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/Fichier.java
+/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/Ligne.java
+/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/ConfigLoader.java
+/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/OperationStrategy.java
 /Users/paul/Desktop/java-tp/src/main/java/fr/hetic/DatabaseConnection.java
 /Users/paul/Desktop/java-tp/src/main/java/fr/hetic/OperationFactory.java
 /Users/paul/Desktop/java-tp/src/main/java/fr/hetic/FileProcessor.java
-/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/Fichier.java
 /Users/paul/Desktop/java-tp/src/main/java/fr/hetic/MultiplicationStrategy.java
-/Users/paul/Desktop/java-tp/src/main/java/fr/hetic/Ligne.java
